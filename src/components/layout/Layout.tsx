@@ -1,13 +1,14 @@
-import Header from '../common/Header';
-import Footer from '../common/Footer';
+import React from 'react';
 import styled from 'styled-components';
+import Footer from '../common/Footer';
+import Header from '../common/Header';
 import type { Theme } from '../../style/theme';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
+function Layout({ children }: LayoutProps) {
   return (
     <LayoutStyle>
       <Header />
@@ -23,3 +24,5 @@ const LayoutStyle = styled.div<{ theme: Theme }>`
   max-width: ${({ theme }) => theme.layout.width.large};
   padding: 20px 0;
 `;
+
+export default Layout;

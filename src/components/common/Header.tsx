@@ -2,24 +2,11 @@ import styled from 'styled-components';
 import type { Theme } from '../../style/theme';
 import logo from '../../assets/logo.png';
 import { FaSignInAlt, FaRegUser } from 'react-icons/fa';
+import type { Category } from '../../models/category.model';
 
-const CATEGORY = [
-  {
-    id: null,
-    name: '전체',
-  },
-  {
-    id: 0,
-    name: '동화',
-  },
-  {
-    id: 1,
-    name: '소설',
-  },
-  {
-    id: 2,
-    name: '사회',
-  },
+const CATEGORY: Category[] = [
+  { id: 1, name: '소설' },
+  { id: 2, name: '자기계발' },
 ];
 
 export default function Header() {
@@ -30,7 +17,7 @@ export default function Header() {
       </h1>
       <nav className="category">
         <ul>
-          {CATEGORY.map((category) => (
+          {CATEGORY.map((category: Category) => (
             <li key={category.id}>
               <a href={`/books?category_id=${category.id}`}>{category.name}</a>
             </li>
